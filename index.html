@@ -8,8 +8,10 @@
     <!-- Google Fonts: Playfair Display for romance, Outfit for sleek modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --bg-primary: #12071f;
@@ -52,7 +54,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 80% 20%, rgba(255, 75, 114, 0.15) 0%, transparent 40%),
                 radial-gradient(circle at 20% 80%, rgba(108, 211, 255, 0.15) 0%, transparent 40%);
             z-index: 0;
@@ -89,13 +91,23 @@
         }
 
         @keyframes orbMove {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(80px, 50px) scale(1.2); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(80px, 50px) scale(1.2);
+            }
         }
 
         @keyframes orbMove2 {
-            0% { transform: translate(0, 0) scale(1.1); }
-            100% { transform: translate(-100px, -60px) scale(0.9); }
+            0% {
+                transform: translate(0, 0) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-100px, -60px) scale(0.9);
+            }
         }
 
         /* Cinematic Blurry Background Video */
@@ -108,7 +120,8 @@
             object-fit: cover;
             z-index: -2;
             filter: blur(16px) brightness(0.4) saturate(110%);
-            transform: scale(1.06); /* Scale slightly to hide blurred edges */
+            transform: scale(1.06);
+            /* Scale slightly to hide blurred edges */
             pointer-events: none;
             transition: opacity 1.5s ease;
         }
@@ -147,7 +160,7 @@
             cursor: pointer;
             position: relative;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 
+            box-shadow:
                 0 6px 20px rgba(0, 0, 0, 0.4),
                 0 0 15px rgba(255, 75, 114, 0.15);
             outline: none;
@@ -156,7 +169,7 @@
         .music-toggle-btn:hover {
             transform: scale(1.08) translateY(-2px);
             border-color: rgba(255, 183, 197, 0.5);
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(255, 75, 114, 0.3),
                 0 0 20px rgba(255, 75, 114, 0.2);
         }
@@ -182,8 +195,13 @@
         }
 
         @keyframes spinVinyl {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .vinyl-center {
@@ -212,12 +230,15 @@
                 transform: translateY(0) translateX(0) scale(0.5) rotate(0deg);
                 opacity: 0;
             }
+
             15% {
                 opacity: 1;
             }
+
             90% {
                 opacity: 0.8;
             }
+
             100% {
                 transform: translateY(-50px) translateX(var(--drift-x)) scale(1.1) rotate(var(--rot));
                 opacity: 0;
@@ -242,7 +263,7 @@
             border-left: 1px solid rgba(255, 183, 197, 0.2);
             border-radius: 30px;
             padding: 2.5rem 2rem;
-            box-shadow: 
+            box-shadow:
                 0 30px 60px rgba(0, 0, 0, 0.4),
                 0 0 40px rgba(255, 75, 114, 0.08),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -260,12 +281,10 @@
             left: -50%;
             width: 200%;
             height: 100%;
-            background: linear-gradient(
-                to right,
-                transparent,
-                rgba(255, 255, 255, 0.05),
-                transparent
-            );
+            background: linear-gradient(to right,
+                    transparent,
+                    rgba(255, 255, 255, 0.05),
+                    transparent);
             transform: rotate(30deg);
             transition: 0.8s;
             pointer-events: none;
@@ -277,7 +296,7 @@
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 
+            box-shadow:
                 0 35px 70px rgba(0, 0, 0, 0.5),
                 0 0 50px rgba(255, 75, 114, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.15);
@@ -289,6 +308,7 @@
                 opacity: 0;
                 transform: translateY(40px) scale(0.95);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -324,13 +344,15 @@
         /* Slide mechanics */
         .carousel-inner {
             display: flex;
-            width: 400%; /* 4 slides = 400% width */
+            width: 400%;
+            /* 4 slides = 400% width */
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .carousel-slide {
-            width: 25%; /* Each slide is 25% of the 400% container */
+            width: 25%;
+            /* Each slide is 25% of the 400% container */
             height: 100%;
             position: relative;
         }
@@ -448,7 +470,7 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
             letter-spacing: 0.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
         }
 
         .subtitle {
@@ -464,7 +486,8 @@
             gap: 6px;
         }
 
-        .subtitle::before, .subtitle::after {
+        .subtitle::before,
+        .subtitle::after {
             content: '';
             display: inline-block;
             width: 15px;
@@ -488,8 +511,13 @@
         }
 
         @keyframes pulseSoft {
-            0% { background: rgba(255, 75, 114, 0.06); }
-            100% { background: rgba(255, 75, 114, 0.12); }
+            0% {
+                background: rgba(255, 75, 114, 0.06);
+            }
+
+            100% {
+                background: rgba(255, 75, 114, 0.12);
+            }
         }
 
         p.letter-body {
@@ -551,7 +579,7 @@
             background: linear-gradient(135deg, #ff4b72 0%, #d92b5c 50%, #b81546 100%);
             color: white;
             border: none;
-            box-shadow: 
+            box-shadow:
                 0 8px 25px rgba(255, 75, 114, 0.35),
                 0 0 0 1px rgba(255, 255, 255, 0.1),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -559,7 +587,7 @@
 
         .btn-primary:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 
+            box-shadow:
                 0 12px 30px rgba(255, 75, 114, 0.5),
                 0 0 20px rgba(255, 75, 114, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -580,16 +608,19 @@
 
         .btn-whatsapp-pulse:hover {
             background: linear-gradient(135deg, #30e372 0%, #20cc5b 60%, #159c8d 100%);
-            box-shadow: 
+            box-shadow:
                 0 12px 30px rgba(37, 211, 102, 0.5),
                 0 0 20px rgba(37, 211, 102, 0.3);
         }
 
         @keyframes buttonPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
             }
+
             50% {
                 transform: scale(1.02);
                 box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65), 0 0 15px rgba(37, 211, 102, 0.4);
@@ -608,7 +639,7 @@
             color: white;
             transform: translateY(-3px);
             border-color: rgba(255, 183, 197, 0.5);
-            box-shadow: 
+            box-shadow:
                 0 8px 20px rgba(255, 75, 114, 0.15),
                 0 0 10px rgba(255, 75, 114, 0.1);
         }
@@ -628,12 +659,15 @@
                 transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.5);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.8;
             }
+
             90% {
                 opacity: 0.8;
             }
+
             100% {
                 transform: translateY(-10vh) translateX(var(--drift-x)) rotate(var(--rot)) scale(var(--scale));
                 opacity: 0;
@@ -663,10 +697,23 @@
         }
 
         @keyframes successHeartBeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.15); }
-            40% { transform: scale(1.05); }
-            60% { transform: scale(1.18); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.15);
+            }
+
+            40% {
+                transform: scale(1.05);
+            }
+
+            60% {
+                transform: scale(1.18);
+            }
         }
 
         .success-title {
@@ -796,6 +843,7 @@
                 transform: translate(-50%, -50%) translate(0, 0) scale(1) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translate(-50%, -50%) translate(var(--mx), var(--my)) scale(var(--scale)) rotate(var(--rot));
                 opacity: 0;
@@ -807,29 +855,36 @@
             body {
                 padding: 1rem;
             }
+
             .card {
                 padding: 2rem 1.2rem;
                 border-radius: 24px;
             }
+
             h2.title {
                 font-size: 1.8rem;
             }
+
             p.letter-body {
                 font-size: 0.96rem;
                 line-height: 1.7;
             }
+
             .music-player-container {
                 top: 15px;
                 right: 15px;
             }
+
             .music-toggle-btn {
                 width: 46px;
                 height: 46px;
             }
+
             .vinyl-disc {
                 width: 34px;
                 height: 34px;
             }
+
             .vinyl-center {
                 width: 10px;
                 height: 10px;
@@ -867,12 +922,15 @@
                 transform: translateY(105vh) translateX(0) scale(0.9);
                 opacity: 0;
             }
+
             8% {
                 opacity: 0.95;
             }
+
             92% {
                 opacity: 0.95;
             }
+
             100% {
                 transform: translateY(-15vh) translateX(var(--drift-x)) scale(1.05);
                 opacity: 0;
@@ -891,7 +949,8 @@
         <source src="Your eyes tell - BTS (Traducida al español).mp4" type="video/mp4">
         <source src="video.mp4" type="video/mp4">
         <!-- Respaldo en línea con un video de pareja tomándose de la mano de forma súper estética -->
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-of-a-loved-one-4813-large.mp4" type="video/mp4">
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-of-a-loved-one-4813-large.mp4"
+            type="video/mp4">
     </video>
     <div class="video-vignette"></div>
 
@@ -913,16 +972,20 @@
                     <div class="carousel-inner" id="carousel-inner">
                         <!-- Up to 4 slides with robust fallback logic mapping to generated designs -->
                         <div class="carousel-slide">
-                            <img src="foto1.jpg" alt="Nosotros 1" onerror="this.src='romantic_illustration.png'; this.onerror=null;">
+                            <img src="foto1.jpg" alt="Nosotros 1"
+                                onerror="this.src='romantic_illustration.png'; this.onerror=null;">
                         </div>
                         <div class="carousel-slide">
-                            <img src="foto2.jpg" alt="Nosotros 2" onerror="this.src='romantic_illustration2.png'; this.onerror=null;">
+                            <img src="foto2.jpg" alt="Nosotros 2"
+                                onerror="this.src='romantic_illustration2.png'; this.onerror=null;">
                         </div>
                         <div class="carousel-slide">
-                            <img src="foto3.jpg" alt="Nosotros 3" onerror="this.src='romantic_illustration3.png'; this.onerror=null;">
+                            <img src="foto3.jpg" alt="Nosotros 3"
+                                onerror="this.src='romantic_illustration3.png'; this.onerror=null;">
                         </div>
                         <div class="carousel-slide">
-                            <img src="foto4.jpg" alt="Nosotros 4" onerror="this.src='romantic_illustration4.png'; this.onerror=null;">
+                            <img src="foto4.jpg" alt="Nosotros 4"
+                                onerror="this.src='romantic_illustration4.png'; this.onerror=null;">
                         </div>
                     </div>
                     <!-- Ambient overlays -->
@@ -953,10 +1016,16 @@
                 </div>
 
                 <p class="letter-body">
-                    Sé que discutimos y cometí el error más grande de mi vida: <span class="highlight-pink">dejar que el enojo ganara y alejarme de ti</span>. Me arrepiento con toda el alma. <span class="highlight-blue">Te quiero inmensamente</span> y no imagino ningún camino si no es tomada de tu mano.
+                    Sé que discutimos y cometí el error más grande de mi vida: <span class="highlight-pink">dejar que el
+                        enojo ganara y alejarme de ti</span>. Me arrepiento con toda el alma. <span
+                        class="highlight-blue">Te quiero inmensamente</span> y no imagino ningún camino si no es tomada
+                    de tu mano.
                 </p>
                 <p class="letter-body" style="margin-top: -1rem;">
-                    Los momentos hermosos que compartimos, como el reflejo de esta foto, son lo que más valoro y protejo en mi corazón. Si me das la oportunidad, haré todo por reconstruir lo nuestro con más madurez, amor incondicional, paciencia y diálogo sincero. Eres y serás siempre lo más maravilloso que me ha pasado.
+                    Los momentos hermosos que compartimos, como el reflejo de esta foto, son lo que más valoro y protejo
+                    en mi corazón. Si me das la oportunidad, haré todo por reconstruir lo nuestro con más madurez, amor
+                    incondicional, paciencia y diálogo sincero. Eres y serás siempre lo más maravilloso que me ha
+                    pasado.
                 </p>
 
                 <!-- Interactive buttons -->
@@ -975,10 +1044,11 @@
                 <div class="success-heart">💖</div>
                 <h3 class="success-title">¡Gracias, mi cielo!</h3>
                 <p class="success-text">
-                    Tu perdón es el regalo más hermoso que he recibido en mi vida. Prometo cuidar tu corazón con todo el respeto, la paciencia y el amor infinito que te mereces. <br><br>
+                    Tu perdón es el regalo más hermoso que he recibido en mi vida. Prometo cuidar tu corazón con todo el
+                    respeto, la paciencia y el amor infinito que te mereces. <br><br>
                     ¡Esta vez haremos las cosas de la mejor manera posible! 🌸✨
                 </p>
-                
+
                 <!-- Action triggers directly to whatsapp confirm -->
                 <div class="success-actions" style="display: flex; flex-direction: column; gap: 0.8rem; width: 100%;">
                     <a href="#" id="btn-whatsapp-direct" target="_blank" class="btn btn-primary btn-whatsapp-pulse">
@@ -997,7 +1067,8 @@
         <div class="modal-card">
             <h3 class="modal-title">¡Hablemos de Nosotros! 💬</h3>
             <p class="modal-desc">
-                Estoy aquí listo para conversar, escucharte y dar el primer paso juntos. ¿Por dónde prefieres que charlemos?
+                Estoy aquí listo para conversar, escucharte y dar el primer paso juntos. ¿Por dónde prefieres que
+                charlemos?
             </p>
             <div class="modal-buttons">
                 <a href="#" target="_blank" class="btn-modal btn-whatsapp" id="whatsapp-link">
@@ -1013,8 +1084,8 @@
     <script>
         // ================= CONFIGURACIÓN DE CONTACTO =================
         // Configura tu número de WhatsApp aquí (con código de país, sin el '+', ej: 573000000000)
-        const TU_TELEFONO = "912506540"; 
-        
+        const TU_TELEFONO = "912506540";
+
         // Mensaje que te enviará ella cuando presione "Perdonar"
         const MENSAJE_RECONCILIACION = "¡Hola! Leí tu hermosa carta y te perdono. Hablemos... 💖✨";
         // =============================================================
@@ -1043,29 +1114,29 @@
 
             const particle = document.createElement('div');
             particle.className = 'particle';
-            
+
             const char = particlesList[Math.floor(Math.random() * particlesList.length)];
             particle.textContent = char;
-            
+
             particle.style.left = Math.random() * 100 + 'vw';
-            
+
             const duration = 7 + Math.random() * 8;
             particle.style.animationDuration = duration + 's';
             particle.style.animationDelay = Math.random() * 4 + 's';
-            
+
             const size = 12 + Math.random() * 16;
             particle.style.fontSize = size + 'px';
-            
+
             const driftX = (Math.random() * 160 - 80) + 'px';
             const rotation = (Math.random() * 360 - 180) + 'deg';
             const scale = 0.8 + Math.random() * 0.7;
-            
+
             particle.style.setProperty('--drift-x', driftX);
             particle.style.setProperty('--rot', rotation);
             particle.style.setProperty('--scale', scale);
-            
+
             document.body.appendChild(particle);
-            
+
             setTimeout(() => {
                 particle.remove();
             }, (duration + 4) * 1000);
@@ -1073,7 +1144,7 @@
 
         // Initialize particles
         setInterval(createFloatingParticle, 600);
-        for(let i = 0; i < 15; i++) {
+        for (let i = 0; i < 15; i++) {
             setTimeout(createFloatingParticle, Math.random() * 4000);
         }
 
@@ -1097,23 +1168,23 @@
 
             const quoteElement = document.createElement('div');
             quoteElement.className = 'bts-quote';
-            
+
             const text = btsQuotes[Math.floor(Math.random() * btsQuotes.length)];
             quoteElement.textContent = text;
-            
+
             // Random horizontal position (5% to 60% of viewport width to prevent clipping)
-            const randomLeft = 5 + Math.random() * 60; 
+            const randomLeft = 5 + Math.random() * 60;
             quoteElement.style.left = randomLeft + 'vw';
-            
+
             // Slow animation: 18 to 26 seconds
-            const duration = 18 + Math.random() * 8; 
+            const duration = 18 + Math.random() * 8;
             quoteElement.style.animationDuration = duration + 's';
-            
+
             const driftX = (Math.random() * 120 - 60) + 'px';
             quoteElement.style.setProperty('--drift-x', driftX);
-            
+
             document.body.appendChild(quoteElement);
-            
+
             setTimeout(() => {
                 quoteElement.remove();
             }, (duration + 2) * 1000);
@@ -1206,21 +1277,21 @@
         // Visual note generator rising from player
         function spawnFloatingNote() {
             if (!isMusicPlaying) return;
-            
+
             const notes = ['🎵', '🎶', '🎹', '✨', '🎶', '💜'];
             const note = document.createElement('div');
             note.className = 'music-note-float';
             note.textContent = notes[Math.floor(Math.random() * notes.length)];
-            
+
             // Positioning within button
             note.style.left = (15 + Math.random() * 24) + 'px';
             note.style.top = '10px';
-            
+
             const drift = (Math.random() * 50 - 25) + 'px';
             const rot = (Math.random() * 180 - 90) + 'deg';
             note.style.setProperty('--drift-x', drift);
             note.style.setProperty('--rot', rot);
-            
+
             musicToggleBtn.appendChild(note);
             setTimeout(() => note.remove(), 2500);
         }
@@ -1264,30 +1335,30 @@
         // 3D Heart Exploder Effect on click
         function createExplosion(x, y, count = 28) {
             const explosionElements = ['💖', '💕', '✨', '🌸', '💖', '💘'];
-            
+
             for (let i = 0; i < count; i++) {
                 const p = document.createElement('div');
                 p.className = 'explosion-particle';
                 p.textContent = explosionElements[Math.floor(Math.random() * explosionElements.length)];
-                
+
                 p.style.left = x + 'px';
                 p.style.top = y + 'px';
-                
+
                 const angle = Math.random() * Math.PI * 2;
                 const distance = 80 + Math.random() * 180;
                 const mx = Math.cos(angle) * distance + 'px';
                 const my = Math.sin(angle) * distance + 'px';
-                
+
                 const scale = 0.5 + Math.random() * 1.2;
                 const rot = (Math.random() * 720 - 360) + 'deg';
-                
+
                 p.style.setProperty('--mx', mx);
                 p.style.setProperty('--my', my);
                 p.style.setProperty('--scale', scale);
                 p.style.setProperty('--rot', rot);
-                
+
                 document.body.appendChild(p);
-                
+
                 setTimeout(() => p.remove(), 1000);
             }
         }
@@ -1297,7 +1368,7 @@
             const rect = btnForgive.getBoundingClientRect();
             const clickX = rect.left + rect.width / 2;
             const clickY = rect.top + rect.height / 2;
-            
+
             createExplosion(clickX, clickY, 35);
             setTimeout(() => createExplosion(clickX, clickY - 50, 20), 200);
             setTimeout(() => createExplosion(clickX - 40, clickY, 15), 400);
@@ -1306,7 +1377,7 @@
             // Animate transition of card contents
             cardContentArea.style.opacity = '0';
             cardContentArea.style.transform = 'scale(0.95)';
-            
+
             // Floating heart rate increases dramatically!
             const intenseSparks = setInterval(createFloatingParticle, 100);
             setTimeout(() => clearInterval(intenseSparks), 3000);
@@ -1314,7 +1385,7 @@
             setTimeout(() => {
                 cardContentArea.style.display = 'none';
                 successState.style.display = 'block';
-                
+
                 setTimeout(() => {
                     successState.classList.add('active');
                 }, 50);
