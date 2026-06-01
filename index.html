@@ -850,44 +850,161 @@
             }
         }
 
-        /* Responsive adaptations */
-        @media (max-width: 480px) {
+        /* =================== RESPONSIVE SYSTEM =================== */
+
+        /* Tablet (≤768px) */
+        @media (max-width: 768px) {
             body {
-                padding: 1rem;
+                padding: 1.2rem;
+                align-items: flex-start;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .card-container {
+                max-width: 100%;
             }
 
             .card {
-                padding: 2rem 1.2rem;
+                padding: 2rem 1.5rem;
                 border-radius: 24px;
             }
 
             h2.title {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+
+            .photo-wrapper {
+                max-width: 100%;
+            }
+
+            .bts-quote {
+                font-size: 0.82rem;
+                padding: 6px 12px;
+                max-width: 90%;
+                white-space: normal;
+            }
+
+            .modal-card {
+                padding: 1.8rem 1.4rem;
+            }
+        }
+
+        /* Phone (≤480px) */
+        @media (max-width: 480px) {
+            body {
+                padding: 0.75rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            .card {
+                padding: 1.8rem 1.1rem;
+                border-radius: 20px;
+            }
+
+            h2.title {
+                font-size: 1.7rem;
+            }
+
+            .subtitle {
+                font-size: 0.78rem;
+                letter-spacing: 2px;
+            }
+
+            .regret-box {
+                font-size: 0.98rem;
+                padding: 0.7rem 1rem;
             }
 
             p.letter-body {
-                font-size: 0.96rem;
+                font-size: 0.93rem;
                 line-height: 1.7;
+                text-align: left;
             }
 
+            .btn {
+                padding: 0.85rem 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .carousel-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
+
+            .carousel-arrow.prev { left: 6px; }
+            .carousel-arrow.next { right: 6px; }
+
             .music-player-container {
-                top: 15px;
-                right: 15px;
+                top: 12px;
+                right: 12px;
             }
 
             .music-toggle-btn {
-                width: 46px;
-                height: 46px;
+                width: 44px;
+                height: 44px;
             }
 
             .vinyl-disc {
-                width: 34px;
-                height: 34px;
+                width: 32px;
+                height: 32px;
             }
 
             .vinyl-center {
                 width: 10px;
                 height: 10px;
+            }
+
+            .success-title {
+                font-size: 1.6rem;
+            }
+
+            .success-text {
+                font-size: 0.95rem;
+            }
+
+            .bts-quote {
+                font-size: 0.76rem;
+                padding: 5px 10px;
+                max-width: 92%;
+                white-space: normal;
+            }
+
+            .modal-card {
+                padding: 1.5rem 1.1rem;
+                border-radius: 20px;
+            }
+
+            .modal-title {
+                font-size: 1.3rem;
+            }
+
+            .glowing-orb,
+            .glowing-orb-2 {
+                display: none;
+            }
+        }
+
+        /* Very small screens (≤360px) */
+        @media (max-width: 360px) {
+            h2.title {
+                font-size: 1.45rem;
+            }
+
+            .card {
+                padding: 1.4rem 0.9rem;
+                border-radius: 16px;
+            }
+
+            .btn {
+                padding: 0.75rem 1rem;
+                font-size: 0.88rem;
+            }
+
+            .subtitle {
+                display: none;
             }
         }
 
@@ -936,6 +1053,67 @@
                 opacity: 0;
             }
         }
+
+        /* Welcome Overlay - Tap to Enter */
+        .welcome-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 4, 18, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            cursor: pointer;
+            transition: opacity 0.9s ease, visibility 0.9s ease;
+        }
+
+        .welcome-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .welcome-heart {
+            font-size: 5rem;
+            animation: welcomePulse 1.6s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(255, 75, 114, 0.7));
+            margin-bottom: 1.4rem;
+        }
+
+        @keyframes welcomePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.12); }
+        }
+
+        .welcome-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 30%, #ffb7c5 70%, #ff4b72 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.6rem;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+
+        .welcome-sub {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255, 220, 229, 0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            animation: blinkText 2s ease-in-out infinite;
+        }
+
+        @keyframes blinkText {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
     </style>
 </head>
 
@@ -953,6 +1131,13 @@
             type="video/mp4">
     </video>
     <div class="video-vignette"></div>
+
+    <!-- Welcome Overlay: one tap to unlock audio -->
+    <div class="welcome-overlay" id="welcome-overlay">
+        <div class="welcome-heart">💖</div>
+        <h1 class="welcome-title">Para Yelly</h1>
+        <p class="welcome-sub">Toca para continuar ✨</p>
+    </div>
 
     <!-- Music Player Flotante (Controla el sonido del video de fondo) -->
     <div class="music-player-container" id="music-player">
@@ -1320,17 +1505,34 @@
 
         musicToggleBtn.addEventListener('click', toggleMusic);
 
-        // Autoplay romantic music on the very first user interaction anywhere
-        function startMusicOnFirstInteraction() {
-            if (!isMusicPlaying) {
-                toggleMusic();
-            }
-            document.removeEventListener('click', startMusicOnFirstInteraction);
-            document.removeEventListener('touchstart', startMusicOnFirstInteraction);
+        // ---- Welcome overlay: unlock audio on first tap ----
+        const welcomeOverlay = document.getElementById('welcome-overlay');
+
+        function unlockAndStart() {
+            // Unmute and play the video
+            bgVideo.muted = false;
+            bgVideo.play().then(() => {
+                musicToggleBtn.classList.add('playing');
+                isMusicPlaying = true;
+                noteSpawnInterval = setInterval(spawnFloatingNote, 1200);
+            }).catch(() => {
+                // If still blocked keep muted video playing (visual only)
+                bgVideo.muted = true;
+            });
+
+            // Fade and remove overlay
+            welcomeOverlay.classList.add('hidden');
+            welcomeOverlay.removeEventListener('click', unlockAndStart);
+            welcomeOverlay.removeEventListener('touchstart', unlockAndStart);
         }
-        document.addEventListener('click', startMusicOnFirstInteraction);
-        document.addEventListener('touchstart', startMusicOnFirstInteraction);
+
+        welcomeOverlay.addEventListener('click', unlockAndStart);
+        welcomeOverlay.addEventListener('touchstart', unlockAndStart);
         // =====================================================
+
+        // Attempt silent autoplay (video stays muted until overlay tap)
+        bgVideo.muted = true;
+        bgVideo.play().catch(() => {});
 
         // 3D Heart Exploder Effect on click
         function createExplosion(x, y, count = 28) {
