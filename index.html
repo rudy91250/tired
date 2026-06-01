@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Samanta 💖</title>
+    <!-- Google Fonts: Playfair Display for romance, Outfit for sleek modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #12071f;
+            --bg-secondary: #2a0835;
+            --pink-light: #ffb7c5;
+            --pink-accent: #ff4b72;
+            --pink-glow: rgba(255, 75, 114, 0.4);
+            --blue-accent: #6cd3ff;
+            --blue-glow: rgba(108, 211, 255, 0.4);
+            --white-trans: rgba(255, 255, 255, 0.08);
+            --border-trans: rgba(255, 255, 255, 0.15);
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at 20% 30%, #2d0b3d 0%, #12071f 50%, #08020e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: var(--font-sans);
+            overflow-x: hidden;
+            position: relative;
+            color: #f8f9fa;
+            padding: 1.5rem;
+        }
+
+        /* Animated background gradient mesh */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(255, 75, 114, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(108, 211, 255, 0.15) 0%, transparent 40%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Ambient glowing orb moving slowly */
+        .glowing-orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 75, 114, 0.25) 0%, transparent 70%);
+            top: 15%;
+            left: 10%;
+            z-index: 0;
+            animation: orbMove 15s ease-in-out infinite alternate;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .glowing-orb-2 {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(108, 211, 255, 0.18) 0%, transparent 70%);
+            bottom: 10%;
+            right: 5%;
+            z-index: 0;
+            animation: orbMove2 18s ease-in-out infinite alternate;
+            pointer-events: none;
+            filter: blur(50px);
+        }
+
+        @keyframes orbMove {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(80px, 50px) scale(1.2); }
+        }
+
+        @keyframes orbMove2 {
+            0% { transform: translate(0, 0) scale(1.1); }
+            100% { transform: translate(-100px, -60px) scale(0.9); }
+        }
+
+        /* Cinematic Blurry Background Video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+            filter: blur(16px) brightness(0.4) saturate(110%);
+            transform: scale(1.06); /* Scale slightly to hide blurred edges */
+            pointer-events: none;
+            transition: opacity 1.5s ease;
+        }
+
+        /* Overlay vignette to darken background video and enhance text readability */
+        .video-vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, rgba(18, 7, 31, 0.25) 0%, rgba(10, 4, 18, 0.8) 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Floating Music Player UI */
+        .music-player-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 99;
+        }
+
+        .music-toggle-btn {
+            background: rgba(25, 12, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 183, 197, 0.25);
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 6px 20px rgba(0, 0, 0, 0.4),
+                0 0 15px rgba(255, 75, 114, 0.15);
+            outline: none;
+        }
+
+        .music-toggle-btn:hover {
+            transform: scale(1.08) translateY(-2px);
+            border-color: rgba(255, 183, 197, 0.5);
+            box-shadow: 
+                0 8px 25px rgba(255, 75, 114, 0.3),
+                0 0 20px rgba(255, 75, 114, 0.2);
+        }
+
+        .music-toggle-btn:active {
+            transform: scale(0.96) translateY(0);
+        }
+
+        .vinyl-disc {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #3d3d3d 25%, #181818 60%, #000 100%);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s linear;
+        }
+
+        .music-toggle-btn.playing .vinyl-disc {
+            animation: spinVinyl 3.5s linear infinite;
+        }
+
+        @keyframes spinVinyl {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .vinyl-center {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--pink-accent);
+            border: 2px solid #000;
+            box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Floating musical note animation */
+        .music-note-float {
+            position: absolute;
+            font-size: 14px;
+            color: var(--pink-light);
+            text-shadow: 0 0 8px var(--pink-accent);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 100;
+            animation: floatNote 2.5s ease-out forwards;
+        }
+
+        @keyframes floatNote {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.5) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-50px) translateX(var(--drift-x)) scale(1.1) rotate(var(--rot));
+                opacity: 0;
+            }
+        }
+
+        /* Glassmorphism Card Container */
+        .card-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 480px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: rgba(25, 12, 38, 0.45);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 183, 197, 0.3);
+            border-left: 1px solid rgba(255, 183, 197, 0.2);
+            border-radius: 30px;
+            padding: 2.5rem 2rem;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 75, 114, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: cardEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(255, 255, 255, 0.05),
+                transparent
+            );
+            transform: rotate(30deg);
+            transition: 0.8s;
+            pointer-events: none;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 35px 70px rgba(0, 0, 0, 0.5),
+                0 0 50px rgba(255, 75, 114, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 183, 197, 0.25);
+        }
+
+        @keyframes cardEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Photo Wrapper and Premium Carousel Container */
+        .photo-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto 1.8rem;
+            border-radius: 24px;
+            padding: 6px;
+            background: linear-gradient(135deg, rgba(255, 75, 114, 0.3), rgba(108, 211, 255, 0.3));
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+            transition: transform 0.5s ease;
+        }
+
+        .photo-wrapper:hover {
+            transform: scale(1.01) rotate(0.5deg);
+        }
+
+        .photo-container {
+            width: 100%;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 4/3;
+            background-color: #1a0f26;
+        }
+
+        /* Slide mechanics */
+        .carousel-inner {
+            display: flex;
+            width: 400%; /* 4 slides = 400% width */
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .carousel-slide {
+            width: 25%; /* Each slide is 25% of the 400% container */
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Romantic soft lighting overlay on photo */
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 65%, rgba(18, 7, 31, 0.75));
+            pointer-events: none;
+            mix-blend-mode: multiply;
+            z-index: 2;
+        }
+
+        .photo-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 75, 114, 0.12) 0%, transparent 80%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Carousel navigation arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(18, 7, 31, 0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: rgba(255, 255, 255, 0.8);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 5;
+            outline: none;
+            user-select: none;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--pink-accent);
+            border-color: transparent;
+            color: white;
+            scale: 1.12;
+            box-shadow: 0 0 12px var(--pink-glow);
+        }
+
+        .carousel-arrow:active {
+            scale: 0.95;
+        }
+
+        .carousel-arrow.prev {
+            left: 12px;
+        }
+
+        .carousel-arrow.next {
+            right: 12px;
+        }
+
+        /* Carousel dots indicator */
+        .carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 5;
+            user-select: none;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            width: 20px;
+            border-radius: 4px;
+            background: var(--pink-accent);
+            box-shadow: 0 0 8px var(--pink-accent);
+        }
+
+        /* Typography Styles */
+        h2.title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 30%, var(--pink-light) 70%, var(--pink-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--blue-accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .subtitle::before, .subtitle::after {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 1px;
+            background-color: var(--blue-accent);
+            opacity: 0.6;
+        }
+
+        .regret-box {
+            background: rgba(255, 75, 114, 0.08);
+            border-left: 3px solid var(--pink-accent);
+            padding: 0.8rem 1.2rem;
+            border-radius: 0 16px 16px 0;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #ffdce5;
+            text-align: left;
+            animation: pulseSoft 2s infinite alternate;
+        }
+
+        @keyframes pulseSoft {
+            0% { background: rgba(255, 75, 114, 0.06); }
+            100% { background: rgba(255, 75, 114, 0.12); }
+        }
+
+        p.letter-body {
+            font-size: 1.02rem;
+            line-height: 1.8;
+            color: #e2d8eb;
+            text-align: justify;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .highlight-pink {
+            color: #ff85a1;
+            font-weight: 600;
+            background: linear-gradient(120deg, rgba(255, 75, 114, 0.15) 0%, rgba(255, 75, 114, 0.05) 100%);
+            padding: 2px 6px;
+            border-radius: 6px;
+            border-bottom: 1px solid rgba(255, 75, 114, 0.3);
+        }
+
+        .highlight-blue {
+            color: var(--blue-accent);
+            font-weight: 600;
+            background: linear-gradient(120deg, rgba(108, 211, 255, 0.15) 0%, rgba(108, 211, 255, 0.05) 100%);
+            padding: 2px 6px;
+            border-radius: 6px;
+            border-bottom: 1px solid rgba(108, 211, 255, 0.3);
+        }
+
+        /* Action Buttons Area */
+        .actions-area {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            outline: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff4b72 0%, #d92b5c 50%, #b81546 100%);
+            color: white;
+            border: none;
+            box-shadow: 
+                0 8px 25px rgba(255, 75, 114, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 
+                0 12px 30px rgba(255, 75, 114, 0.5),
+                0 0 20px rgba(255, 75, 114, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #ff6083 0%, #e63869 50%, #c92254 100%);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px) scale(0.99);
+        }
+
+        /* Pulsing confirmation button for WhatsApp */
+        .btn-whatsapp-pulse {
+            animation: buttonPulse 1.8s infinite;
+            background: linear-gradient(135deg, #25D366 0%, #1ebd54 60%, #128C7E 100%);
+            border: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp-pulse:hover {
+            background: linear-gradient(135deg, #30e372 0%, #20cc5b 60%, #159c8d 100%);
+            box-shadow: 
+                0 12px 30px rgba(37, 211, 102, 0.5),
+                0 0 20px rgba(37, 211, 102, 0.3);
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 22px rgba(37, 211, 102, 0.35);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65), 0 0 15px rgba(37, 211, 102, 0.4);
+            }
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffdce5;
+            border: 1px solid rgba(255, 183, 197, 0.25);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateY(-3px);
+            border-color: rgba(255, 183, 197, 0.5);
+            box-shadow: 
+                0 8px 20px rgba(255, 75, 114, 0.15),
+                0 0 10px rgba(255, 75, 114, 0.1);
+        }
+
+        /* Custom Confetti / Floating Heart Particles */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+            opacity: 0;
+            animation: floatUpAnim linear infinite;
+        }
+
+        @keyframes floatUpAnim {
+            0% {
+                transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.5);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(var(--drift-x)) rotate(var(--rot)) scale(var(--scale));
+                opacity: 0;
+            }
+        }
+
+        /* Success Letter State (Hidden initially) */
+        .success-state {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .success-state.active {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .success-heart {
+            font-size: 4rem;
+            margin: 1.5rem 0;
+            filter: drop-shadow(0 0 15px var(--pink-accent));
+            animation: successHeartBeat 1.2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes successHeartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            40% { transform: scale(1.05); }
+            60% { transform: scale(1.18); }
+        }
+
+        .success-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: #ffb7c5;
+            margin-bottom: 1rem;
+        }
+
+        .success-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #e2d8eb;
+            margin-bottom: 2rem;
+        }
+
+        /* Modal Popup for "Hablemos" Options */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 4, 18, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: rgba(28, 14, 43, 0.95);
+            border: 1px solid rgba(255, 183, 197, 0.25);
+            border-radius: 24px;
+            padding: 2.2rem;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 75, 114, 0.15);
+            transform: scale(0.85) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: #ffdce5;
+            margin-bottom: 1rem;
+        }
+
+        .modal-desc {
+            font-size: 0.98rem;
+            color: #d1c5db;
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .btn-modal {
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            border: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba59;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-close-modal {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffdce5;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+        }
+
+        .btn-close-modal:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        /* Sparkle/Click Exploding Particle Class */
+        .explosion-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            font-size: 2rem;
+            user-select: none;
+            animation: explode 1s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(-50%, -50%) translate(0, 0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translate(var(--mx), var(--my)) scale(var(--scale)) rotate(var(--rot));
+                opacity: 0;
+            }
+        }
+
+        /* Responsive adaptations */
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+            .card {
+                padding: 2rem 1.2rem;
+                border-radius: 24px;
+            }
+            h2.title {
+                font-size: 1.8rem;
+            }
+            p.letter-body {
+                font-size: 0.96rem;
+                line-height: 1.7;
+            }
+            .music-player-container {
+                top: 15px;
+                right: 15px;
+            }
+            .music-toggle-btn {
+                width: 46px;
+                height: 46px;
+            }
+            .vinyl-disc {
+                width: 34px;
+                height: 34px;
+            }
+            .vinyl-center {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        /* BTS Floating Quotes Style */
+        .bts-quote {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            user-select: none;
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            font-style: italic;
+            font-weight: 400;
+            color: rgba(255, 220, 229, 0.75);
+            text-shadow: 0 0 10px rgba(255, 75, 114, 0.25);
+            white-space: nowrap;
+            background: rgba(28, 14, 43, 0.4);
+            padding: 8px 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 183, 197, 0.15);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            opacity: 0;
+            animation: floatUpQuote linear forwards;
+            max-width: 85%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @keyframes floatUpQuote {
+            0% {
+                transform: translateY(105vh) translateX(0) scale(0.9);
+                opacity: 0;
+            }
+            8% {
+                opacity: 0.95;
+            }
+            92% {
+                opacity: 0.95;
+            }
+            100% {
+                transform: translateY(-15vh) translateX(var(--drift-x)) scale(1.05);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Ambient backgrounds and lights -->
+    <div class="glowing-orb"></div>
+    <div class="glowing-orb-2"></div>
+
+    <!-- Video de Fondo Estético (Bucle, borroso y silenciado para autoplay) -->
+    <video id="bg-video" autoplay loop muted playsinline class="background-video">
+        <source src="Your eyes tell - BTS (Traducida al español).mp4" type="video/mp4">
+        <source src="video.mp4" type="video/mp4">
+        <!-- Respaldo en línea con un video de pareja tomándose de la mano de forma súper estética -->
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-hands-of-a-loved-one-4813-large.mp4" type="video/mp4">
+    </video>
+    <div class="video-vignette"></div>
+
+    <!-- Music Player Flotante (Controla el sonido del video de fondo) -->
+    <div class="music-player-container" id="music-player">
+        <button class="music-toggle-btn" id="music-toggle-btn" title="Activar/Silenciar Sonido de Fondo">
+            <div class="vinyl-disc">
+                <div class="vinyl-center"></div>
+            </div>
+        </button>
+    </div>
+
+    <div class="card-container">
+        <!-- Main Apology Card -->
+        <div class="card" id="apology-card">
+            <!-- Carousel of Photos -->
+            <div class="photo-wrapper">
+                <div class="photo-container">
+                    <div class="carousel-inner" id="carousel-inner">
+                        <!-- Up to 4 slides with robust fallback logic mapping to generated designs -->
+                        <div class="carousel-slide">
+                            <img src="foto1.jpg" alt="Nosotros 1" onerror="this.src='romantic_illustration.png'; this.onerror=null;">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="foto2.jpg" alt="Nosotros 2" onerror="this.src='romantic_illustration2.png'; this.onerror=null;">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="foto3.jpg" alt="Nosotros 3" onerror="this.src='romantic_illustration3.png'; this.onerror=null;">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="foto4.jpg" alt="Nosotros 4" onerror="this.src='romantic_illustration4.png'; this.onerror=null;">
+                        </div>
+                    </div>
+                    <!-- Ambient overlays -->
+                    <div class="photo-overlay"></div>
+                    <div class="photo-glow"></div>
+
+                    <!-- Slide arrows -->
+                    <button class="carousel-arrow prev" id="carousel-prev" aria-label="Foto anterior">&#10094;</button>
+                    <button class="carousel-arrow next" id="carousel-next" aria-label="Siguiente foto">&#10095;</button>
+
+                    <!-- Indicators -->
+                    <div class="carousel-dots" id="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Body Content -->
+            <div class="card-content-area" id="card-content-area">
+                <h2 class="title">YELLY 💖</h2>
+                <div class="subtitle">Disculpas de Corazón</div>
+
+                <div class="regret-box">
+                    Lamento mucho todo lo que pasó... 🌸
+                </div>
+
+                <p class="letter-body">
+                    Sé que discutimos y cometí el error más grande de mi vida: <span class="highlight-pink">dejar que el enojo ganara y alejarme de ti</span>. Me arrepiento con toda el alma. <span class="highlight-blue">Te quiero inmensamente</span> y no imagino ningún camino si no es tomada de tu mano.
+                </p>
+                <p class="letter-body" style="margin-top: -1rem;">
+                    Los momentos hermosos que compartimos, como el reflejo de esta foto, son lo que más valoro y protejo en mi corazón. Si me das la oportunidad, haré todo por reconstruir lo nuestro con más madurez, amor incondicional, paciencia y diálogo sincero. Eres y serás siempre lo más maravilloso que me ha pasado.
+                </p>
+
+                <!-- Interactive buttons -->
+                <div class="actions-area">
+                    <button id="btn-forgive" class="btn btn-primary">
+                        Perdonar 💖
+                    </button>
+                    <button id="btn-talk" class="btn btn-secondary">
+                        Hablemos 💬
+                    </button>
+                </div>
+            </div>
+
+            <!-- Success Confession Letter (Hidden Initially) -->
+            <div class="success-state" id="success-state">
+                <div class="success-heart">💖</div>
+                <h3 class="success-title">¡Gracias, mi cielo!</h3>
+                <p class="success-text">
+                    Tu perdón es el regalo más hermoso que he recibido en mi vida. Prometo cuidar tu corazón con todo el respeto, la paciencia y el amor infinito que te mereces. <br><br>
+                    ¡Esta vez haremos las cosas de la mejor manera posible! 🌸✨
+                </p>
+                
+                <!-- Action triggers directly to whatsapp confirm -->
+                <div class="success-actions" style="display: flex; flex-direction: column; gap: 0.8rem; width: 100%;">
+                    <a href="#" id="btn-whatsapp-direct" target="_blank" class="btn btn-primary btn-whatsapp-pulse">
+                        Avisarle por WhatsApp 📱
+                    </a>
+                    <button id="btn-success-close" class="btn btn-secondary">
+                        Ver opciones de contacto 💬
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Popup for Hablemos -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-card">
+            <h3 class="modal-title">¡Hablemos de Nosotros! 💬</h3>
+            <p class="modal-desc">
+                Estoy aquí listo para conversar, escucharte y dar el primer paso juntos. ¿Por dónde prefieres que charlemos?
+            </p>
+            <div class="modal-buttons">
+                <a href="#" target="_blank" class="btn-modal btn-whatsapp" id="whatsapp-link">
+                    Escribir por WhatsApp 💬
+                </a>
+                <button class="btn-modal btn-close-modal" id="btn-close-modal">
+                    Volver a leer la carta 🌸
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ================= CONFIGURACIÓN DE CONTACTO =================
+        // Configura tu número de WhatsApp aquí (con código de país, sin el '+', ej: 573000000000)
+        const TU_TELEFONO = "573000000000"; 
+        
+        // Mensaje que te enviará ella cuando presione "Perdonar"
+        const MENSAJE_RECONCILIACION = "¡Hola! Leí tu hermosa carta y te perdono. Hablemos... 💖✨";
+        // =============================================================
+
+        // Dynamic links setup
+        const encodedMsg = encodeURIComponent(MENSAJE_RECONCILIACION);
+        const waLink = `https://wa.me/${TU_TELEFONO}?text=${encodedMsg}`;
+        document.getElementById('btn-whatsapp-direct').href = waLink;
+        document.getElementById('whatsapp-link').href = waLink;
+
+        // DOM Elements
+        const btnForgive = document.getElementById('btn-forgive');
+        const btnTalk = document.getElementById('btn-talk');
+        const btnSuccessClose = document.getElementById('btn-success-close');
+        const btnCloseModal = document.getElementById('btn-close-modal');
+        const cardContentArea = document.getElementById('card-content-area');
+        const successState = document.getElementById('success-state');
+        const modalOverlay = document.getElementById('modal-overlay');
+
+        // Ambient Floating Particles System (Hearts, Stars, Petals)
+        const particlesList = ['💖', '🌸', '✨', '💕', '✨', '🌸', '💖'];
+        const maxParticles = 35;
+
+        function createFloatingParticle() {
+            if (document.querySelectorAll('.particle').length >= maxParticles) return;
+
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const char = particlesList[Math.floor(Math.random() * particlesList.length)];
+            particle.textContent = char;
+            
+            particle.style.left = Math.random() * 100 + 'vw';
+            
+            const duration = 7 + Math.random() * 8;
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = Math.random() * 4 + 's';
+            
+            const size = 12 + Math.random() * 16;
+            particle.style.fontSize = size + 'px';
+            
+            const driftX = (Math.random() * 160 - 80) + 'px';
+            const rotation = (Math.random() * 360 - 180) + 'deg';
+            const scale = 0.8 + Math.random() * 0.7;
+            
+            particle.style.setProperty('--drift-x', driftX);
+            particle.style.setProperty('--rot', rotation);
+            particle.style.setProperty('--scale', scale);
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, (duration + 4) * 1000);
+        }
+
+        // Initialize particles
+        setInterval(createFloatingParticle, 600);
+        for(let i = 0; i < 15; i++) {
+            setTimeout(createFloatingParticle, Math.random() * 4000);
+        }
+
+        // ================= BTS FLOATING QUOTES =================
+        const btsQuotes = [
+            "“Puede que ayer cometiera un error, pero el yo de ayer sigo siendo yo.” — RM 💜",
+            "“Caminemos juntos por este sendero lleno de flores.” — Suga 🌸",
+            "“Tu presencia en sí misma es un regalo para el mundo.” — Jin ✨",
+            "“El amanecer es más brillante justo después de la noche más oscura.” — BTS 🌅",
+            "“Si quieres amar a otros, debes aprender a amarte a ti mismo primero.” — RM 💜",
+            "“Incluso si te caes y te haces daño, sigue corriendo hacia adelante.” — BTS 🏃‍♂️",
+            "“Encontraremos la luz en medio del camino difícil.” — J-Hope 🌟",
+            "“Tu luz siempre brillará en la noche más profunda de mi corazón.” — BTS 💖",
+            "“Al final todo saldrá bien, y si no, es porque aún no es el final.” — Jin ✨",
+            "“Incluso en la distancia, caminamos bajo el mismo cielo.” — Jungkook 🌌"
+        ];
+
+        function createFloatingQuote() {
+            // Keep maximum 3 quotes on screen to avoid clutter
+            if (document.querySelectorAll('.bts-quote').length >= 3) return;
+
+            const quoteElement = document.createElement('div');
+            quoteElement.className = 'bts-quote';
+            
+            const text = btsQuotes[Math.floor(Math.random() * btsQuotes.length)];
+            quoteElement.textContent = text;
+            
+            // Random horizontal position (5% to 60% of viewport width to prevent clipping)
+            const randomLeft = 5 + Math.random() * 60; 
+            quoteElement.style.left = randomLeft + 'vw';
+            
+            // Slow animation: 18 to 26 seconds
+            const duration = 18 + Math.random() * 8; 
+            quoteElement.style.animationDuration = duration + 's';
+            
+            const driftX = (Math.random() * 120 - 60) + 'px';
+            quoteElement.style.setProperty('--drift-x', driftX);
+            
+            document.body.appendChild(quoteElement);
+            
+            setTimeout(() => {
+                quoteElement.remove();
+            }, (duration + 2) * 1000);
+        }
+
+        // Spawn a BTS quote every 13 seconds
+        setInterval(createFloatingQuote, 13000);
+        // Seed first quote after a short delay
+        setTimeout(createFloatingQuote, 4000);
+        // =====================================================
+
+        // ================= MOTOR DEL CARRUSEL =================
+        const carouselInner = document.getElementById('carousel-inner');
+        const carouselPrev = document.getElementById('carousel-prev');
+        const carouselNext = document.getElementById('carousel-next');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const totalSlides = 4;
+        let autoPlayTimer;
+
+        function showSlide(index) {
+            // Normalize index bounds
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            // Move the inner element
+            carouselInner.style.transform = `translateX(-${currentSlide * 25}%)`;
+
+            // Update active dots
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Autoplay loop every 5 seconds (5000ms) as requested
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayTimer = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+        }
+
+        // Click actions
+        carouselNext.addEventListener('click', () => {
+            nextSlide();
+            startAutoPlay(); // Reset timer on interaction
+        });
+
+        carouselPrev.addEventListener('click', () => {
+            prevSlide();
+            startAutoPlay(); // Reset timer on interaction
+        });
+
+        dots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const target = parseInt(dot.getAttribute('data-slide'));
+                showSlide(target);
+                startAutoPlay(); // Reset timer on interaction
+            });
+        });
+
+        // Initialize carousel
+        startAutoPlay();
+        // =====================================================
+
+        // ================= MOTOR DE AUDIO Y VIDEO ====================
+        const bgVideo = document.getElementById('bg-video');
+        const musicToggleBtn = document.getElementById('music-toggle-btn');
+        let isMusicPlaying = false;
+
+        // Visual note generator rising from player
+        function spawnFloatingNote() {
+            if (!isMusicPlaying) return;
+            
+            const notes = ['🎵', '🎶', '🎹', '✨', '🎶', '💜'];
+            const note = document.createElement('div');
+            note.className = 'music-note-float';
+            note.textContent = notes[Math.floor(Math.random() * notes.length)];
+            
+            // Positioning within button
+            note.style.left = (15 + Math.random() * 24) + 'px';
+            note.style.top = '10px';
+            
+            const drift = (Math.random() * 50 - 25) + 'px';
+            const rot = (Math.random() * 180 - 90) + 'deg';
+            note.style.setProperty('--drift-x', drift);
+            note.style.setProperty('--rot', rot);
+            
+            musicToggleBtn.appendChild(note);
+            setTimeout(() => note.remove(), 2500);
+        }
+
+        let noteSpawnInterval;
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                // Mute and pause video audio
+                bgVideo.muted = true;
+                musicToggleBtn.classList.remove('playing');
+                isMusicPlaying = false;
+                clearInterval(noteSpawnInterval);
+            } else {
+                // Unmute and play the video audio
+                bgVideo.muted = false;
+                bgVideo.play().then(() => {
+                    musicToggleBtn.classList.add('playing');
+                    isMusicPlaying = true;
+                    noteSpawnInterval = setInterval(spawnFloatingNote, 1200);
+                }).catch(err => {
+                    console.log("El navegador bloqueó la reproducción automática sin interacción.", err);
+                });
+            }
+        }
+
+        musicToggleBtn.addEventListener('click', toggleMusic);
+
+        // Autoplay romantic music on the very first user interaction anywhere
+        function startMusicOnFirstInteraction() {
+            if (!isMusicPlaying) {
+                toggleMusic();
+            }
+            document.removeEventListener('click', startMusicOnFirstInteraction);
+            document.removeEventListener('touchstart', startMusicOnFirstInteraction);
+        }
+        document.addEventListener('click', startMusicOnFirstInteraction);
+        document.addEventListener('touchstart', startMusicOnFirstInteraction);
+        // =====================================================
+
+        // 3D Heart Exploder Effect on click
+        function createExplosion(x, y, count = 28) {
+            const explosionElements = ['💖', '💕', '✨', '🌸', '💖', '💘'];
+            
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'explosion-particle';
+                p.textContent = explosionElements[Math.floor(Math.random() * explosionElements.length)];
+                
+                p.style.left = x + 'px';
+                p.style.top = y + 'px';
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 80 + Math.random() * 180;
+                const mx = Math.cos(angle) * distance + 'px';
+                const my = Math.sin(angle) * distance + 'px';
+                
+                const scale = 0.5 + Math.random() * 1.2;
+                const rot = (Math.random() * 720 - 360) + 'deg';
+                
+                p.style.setProperty('--mx', mx);
+                p.style.setProperty('--my', my);
+                p.style.setProperty('--scale', scale);
+                p.style.setProperty('--rot', rot);
+                
+                document.body.appendChild(p);
+                
+                setTimeout(() => p.remove(), 1000);
+            }
+        }
+
+        // Action: Forgive Button Clicked
+        btnForgive.addEventListener('click', (e) => {
+            const rect = btnForgive.getBoundingClientRect();
+            const clickX = rect.left + rect.width / 2;
+            const clickY = rect.top + rect.height / 2;
+            
+            createExplosion(clickX, clickY, 35);
+            setTimeout(() => createExplosion(clickX, clickY - 50, 20), 200);
+            setTimeout(() => createExplosion(clickX - 40, clickY, 15), 400);
+            setTimeout(() => createExplosion(clickX + 40, clickY, 15), 400);
+
+            // Animate transition of card contents
+            cardContentArea.style.opacity = '0';
+            cardContentArea.style.transform = 'scale(0.95)';
+            
+            // Floating heart rate increases dramatically!
+            const intenseSparks = setInterval(createFloatingParticle, 100);
+            setTimeout(() => clearInterval(intenseSparks), 3000);
+
+            setTimeout(() => {
+                cardContentArea.style.display = 'none';
+                successState.style.display = 'block';
+                
+                setTimeout(() => {
+                    successState.classList.add('active');
+                }, 50);
+            }, 600);
+        });
+
+        // Action: Hablemos Button Clicked
+        btnTalk.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+        });
+
+        // Close Modal
+        btnCloseModal.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+        });
+
+        // Action from success screen close
+        btnSuccessClose.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+        });
+
+        // Close modal when clicking outside the card
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
